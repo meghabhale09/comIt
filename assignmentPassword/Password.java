@@ -1,7 +1,8 @@
+package assignmentPassword;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -19,14 +20,7 @@ public class Password {
 
     public Password() throws Exception{
         this.length = 8;
-        if(isStrong(generatePassword(this.length)));
-        else
-            throw new Exception("invalid password!!");
-    }
-
-    public static void main(String[] args) throws Exception{
-        Password password = new Password();
-        System.out.println(password.isStrong(password.generatePassword(8)));
+        generatePassword(length);
     }
 
     public String generatePassword(int length){
@@ -48,15 +42,14 @@ public class Password {
             if(i==strAlphaNumeric.length) i=0;
             generateString(strAlphaNumeric[i],newPassword);
         }
-
         return  shuffleString(newPassword.toString());
     }
 
     public String shuffleString(String string) {
         List<String> letters = Arrays.asList(string.split(""));
         Collections.shuffle(letters);
-
-        return letters.stream().collect(Collectors.joining());
+        this.password = letters.stream().collect(Collectors.joining());
+        return password;
 
     }
 
@@ -68,10 +61,9 @@ public class Password {
     }
 
     public boolean isStrong(String password){
-        if(password.length()<8)     return false;
+        if(password==null || password.length() < 8)     return false;
 
         int totalNumChar=0;int totalLowerChars=0, totalUpperCase = 0;
-        System.out.println(password );
 
         for(int i=0;i<password.length();i++) {
             if (Pattern.matches("[0-9]", password.substring(i, (i + 1)))) {
@@ -82,14 +74,16 @@ public class Password {
                 totalUpperCase++;
             }
         }
-        if(totalNumChar >= 5 && totalLowerChars >= 1 && totalUpperCase >= 2) return  true;
+
+        if(totalNumChar > MINIMUM_DIGIT_IN_PASSWORD
+                && totalLowerChars > MINIMUM_LOWER_CASE_IN_PASSWORD
+                && totalUpperCase > MINIMUM_UPPER_CASE_IN_PASSWORD) return  true;
         return false;
     }
 
     public String getPassword() {
         return password;
     }
-
 
     public int getLength() {
         return length;

@@ -1,5 +1,5 @@
 package Bank;
 
-public interface Wokable {
+public interface Workable {
     public int work(int hours);
 }

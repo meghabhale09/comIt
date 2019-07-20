@@ -1,7 +1,10 @@
+package coin;
+
 public class Coin {
 
     private  String coinName;
    private int value;
+
 
     public Coin(String coinName, int value) {
         this.coinName = coinName;
@@ -23,4 +26,6 @@ public class Coin {
     public void setValue(int value) {
         this.value = value;
     }
+
+
 }

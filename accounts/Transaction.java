@@ -1,4 +1,5 @@
 package accounts;
 
-public class Transaction {
+public enum Transaction {
+    WITHDRAW, DEPOSIT
 }

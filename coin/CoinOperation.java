@@ -1,13 +1,15 @@
+package coin;
+
 import java.util.Scanner;
 
 public class CoinOperation {
 
     public static void main(String[] args) {
-        Coin loonie = new Coin("loonie", 1);
-        Coin twoonie = new Coin("twoonie", 2);
-        Coin quarter = new Coin("quarter", 25);
-        Coin dime = new Coin("dime", 10);
-        Coin nickel = new Coin("nickel", 5);
+        final Coin loonie = new Coin("loonie", 1);
+        final Coin twoonie = new Coin("twoonie", 2);
+        final Coin quarter = new Coin("quarter", 25);
+        final Coin dime = new Coin("dime", 10);
+        final Coin nickel = new Coin("nickel", 5);
 
         Scanner sc = new Scanner(System.in);
         System.out.println("please enter amount");
@@ -29,5 +31,16 @@ public class CoinOperation {
                 "  Nickel(s)" + ((precisionValue%quarter.getValue())%dime.getValue())/nickel.getValue()));
 
 
+    }
+
+    public int requredCoins(Scanner sc){
+        System.out.println(" Please enter a value");
+        int value = sc.nextInt();
+
+        int tempVal = value, numNickel, numDime, numQuarter, numlooney,numtwonnie;
+        while(tempVal>0){
+
+        }
+        return 0;
     }
 }

@@ -1,3 +1,5 @@
+package coin;
+
 import java.util.Scanner;
 
 public class CoinExample {
