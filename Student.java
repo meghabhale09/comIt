@@ -1,8 +1,8 @@
-public class Student_Height_Data {
+public class Student {
     private String studentName;
     private int height;
 
-    public Student_Height_Data(String studentName, int height) {
+    public Student(String studentName, int height) {
         this.studentName = studentName;
         this.height = height;
     }

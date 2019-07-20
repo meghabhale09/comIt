@@ -1,3 +1,5 @@
+package shapes;
+
 public class Recangle {
     private String name;
     private float length, width, height;

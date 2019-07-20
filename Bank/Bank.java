@@ -4,12 +4,12 @@ import  java.util.*;
 import java.util.List;
 import java.util.function.*;
 
-public class Main {
+public class Bank {
     private Manager manager;
     private List<Employee> employees;
     private List<Account> accounts;
 
-    public Main(Manager manager) {
+    public Bank(Manager manager) {
         this.manager = manager;
         this.employees = new ArrayList<>();
         this.accounts = new ArrayList<>();
@@ -39,6 +39,7 @@ public class Main {
 
     public void remvoveAccount(int accountNumber){
         accounts.stream().filter(a->a.getNumber()==accountNumber)
-                .findFirst().ifPresent(a->a.getNumber());
+                .findFirst()
+                .ifPresent(a->a.getNumber());
     }
 }

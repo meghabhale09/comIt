@@ -1,3 +1,5 @@
+package shapes;
+
 public class GeometryMain {
     public static void main(String[] args) {
         Circle[] circles = new Circle[]{new Circle("man hole",15), new Circle("Tower Of Pisa", 10, 18)};
@@ -5,16 +7,9 @@ public class GeometryMain {
 
 
             for (Circle c:circles) {
-                System.out.println(c.getName() + " has following properties");
-                System.out.println(c.getName() + "'s area is equal to " + c.printArea() + " meters squared");
-                System.out.println(c.getName() + "'s circumference is equal to " + c.printCircumference() + " meters squared");
-
-                if(c.getHeight()==0) System.out.println(c.getName() + " is not a cylinder. Volume can not be computed");
-                else System.out.println(c.getName() + "is a cylinder. It has a volume of " + c.printVolume() +" cubic meters /n");
-
+                System.out.println(c);
                 findShape(c.getName(),circles);
                 System.out.println();
-
         }
 
 
