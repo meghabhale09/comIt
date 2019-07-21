@@ -34,7 +34,7 @@ public class Inventory {
 
 
         /*Find largest number*/
-      /*  Practice_2 practice = new Practice_2();
+      /*  Practice2 practice = new Practice2();
 /*
         System.out.print("Please enter a number");
         int firstNum =  Integer.parseInt(scan.nextLine());
