@@ -24,23 +24,25 @@ public class PersonMain {
         Person person2 = new Person("John",17,'M');
         Person person3 = new Person();
 
-        setAttributes(person3);
+        setAttributes(person3,"Sam", 'M', 17,48,100);
 
-        System.out.println("" + person1.getName() + " has " + calcWeight(person1) );
-        System.out.println("" + person2.getName() + " has " + calcWeight(person2) );
-        System.out.println("" + person3.getName() + " has " + calcWeight(person3) );
-
-        System.out.println("" + person1.getName() + " has " + leagalAge(person1) );
-        System.out.println("" + person2.getName() + " has " + leagalAge(person2) );
-        System.out.println("" + person3.getName() + " has " + leagalAge(person3) );
+        showResults(person1);
+        showResults(person2);
+        showResults(person3);
     }
 
-    public static void setAttributes(Person person3){
-        person3.setName("Vish");
-        person3.setGender('F');
-        person3.setAge(17);
-        person3.setWeight(60);
-        person3.setHeight(1);
+    public static void showResults(Person p){
+        System.out.println("" + p.getName() + " has " + calcWeight(p) );
+        System.out.println("" + p.getName() + " has " + leagalAge(p) );
+
+    }
+
+    public static void setAttributes(Person person,String name, char gender, int age, int weight, int height){
+        person.setName(name);
+        person.setGender(gender);
+        person.setAge(age);
+        person.setWeight(weight);
+        person.setHeight(height);
     }
 
     public static String calcWeight(Person p){
